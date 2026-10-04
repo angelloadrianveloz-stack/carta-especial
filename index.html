@@ -23,19 +23,76 @@
             justify-content: center;
             align-items: center;
             line-height: 1.8;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Lluvia de emojis cayendo */
+        .falling-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .falling-item {
+            position: absolute;
+            top: -60px;
+            user-select: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg) translateX(40px);
+                opacity: 0.2;
+            }
         }
 
         .container {
             max-width: 800px;
             width: 100%;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(244, 114, 182, 0.3);
-            border-radius: 24px;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(14px);
+            border: 2px solid rgba(244, 114, 182, 0.4);
+            border-radius: 28px;
             padding: 40px 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(236, 72, 153, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(236, 72, 153, 0.3);
             position: relative;
-            overflow: hidden;
+            z-index: 2;
+        }
+
+        .audio-container {
+            margin: 15px 0 30px 0;
+            padding: 22px;
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(192, 38, 211, 0.15));
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(244, 114, 182, 0.4);
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.2);
+        }
+
+        .audio-container p {
+            text-align: center;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: #f472b6;
+            font-weight: 600;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 420px;
+            outline: none;
+            border-radius: 30px;
         }
 
         .header {
@@ -49,7 +106,7 @@
             font-size: 2.2rem;
             color: #f472b6;
             margin-bottom: 10px;
-            text-shadow: 0 0 12px rgba(244, 114, 182, 0.4);
+            text-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
         }
 
         .header p {
@@ -91,7 +148,7 @@
         }
 
         blockquote {
-            background: rgba(236, 72, 153, 0.12);
+            background: rgba(236, 72, 153, 0.15);
             border-left: 4px solid #f472b6;
             margin: 25px 0;
             padding: 18px 22px;
@@ -100,30 +157,7 @@
             color: #fbcfe8;
             text-align: center;
             font-size: 1.08rem;
-        }
-
-        .audio-container {
-            margin-top: 35px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(244, 114, 182, 0.25);
-        }
-
-        .audio-container p {
-            text-align: center;
-            font-size: 1rem;
-            margin-bottom: 12px;
-            color: #f472b6;
-            font-weight: 600;
-        }
-
-        audio {
-            width: 100%;
-            max-width: 400px;
-            outline: none;
-            border-radius: 30px;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.15);
         }
 
         .footer {
@@ -140,7 +174,7 @@
             font-size: 2.7rem;
             color: #f472b6;
             margin-top: 5px;
-            text-shadow: 0 0 10px rgba(244, 114, 182, 0.3);
+            text-shadow: 0 0 12px rgba(244, 114, 182, 0.4);
         }
 
         @media (max-width: 600px) {
@@ -158,8 +192,22 @@
 </head>
 <body>
 
+    <!-- Lluvia de caritas y elementos románticos -->
+    <div class="falling-container" id="falling-container"></div>
+
     <div class="container">
         <div class="divider">🎀 ✨ ⭐ 🌟 💖 🤍 🐼 🙈 🤍 💖 🌟 ⭐ ✨ 🎀</div>
+
+        <!-- REPRODUCTOR DE MÚSICA AL INICIO DE LA PÁGINA -->
+        <div class="audio-container">
+            <p>🎵 Reproductor de Música Especial 🎵</p>
+            <audio controls loop id="bg-music">
+                <source src="cancion.mp3" type="audio/mpeg">
+                <source src="cancion.m4a" type="audio/mp4">
+                <source src="cancion.ogg" type="audio/ogg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
 
         <div class="header">
             <h1>Nuestra Historia Juntos 🥰💖🤍🐼✨⭐🙈</h1>
@@ -194,16 +242,6 @@
         <p>Quiero ser yo quien te cuide y te prepare algo caliente cuando te enfermes, y ser quien vele tus sueños en el silencio de la noche cuando duermas profundamente. 🥰💤 Anhelo con todo mi corazón que seas la mujer que vea al despertar cada mañana a mi lado, sentir la calidez de tu piel, escuchar tus latidos cerca de mi pecho y compartir cada etapa de nuestras vidas. 💖🌟 Sueño con casarme contigo, con construir un hogar sólido y lleno de paz, con superar juntos cualquier obstáculo, distancia o prueba que se nos presente en el camino. 🤍✨💍🐼🙈</p>
         <p>No hay absolutamente nada que cambiaría de ti ni de nuestra historia. 😍💫 Tú tienes ese poder mágico de desconectarme del caos cotidiano y llevarme a un mundo tranquilo donde solo existimos tú y yo. ✨💖 Hoy, con toda la sinceridad de mi alma, con mi gratitud eterna y con todo mi amor, reafirmo que si me dieran a elegir mil veces entre todos los caminos posibles del universo, en todas y cada una de esas vidas te volvería a elegir a ti. 🥰❤️🤍🐼⭐🌟🙈</p>
 
-        <div class="audio-container">
-            <p>🎵 Reproductor de Música Especial 🎵</p>
-            <audio controls loop id="bg-music">
-                <source src="cancion.mp3" type="audio/mpeg">
-                <source src="cancion.m4a" type="audio/mp4">
-                <source src="cancion.ogg" type="audio/ogg">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-        </div>
-
         <div class="footer">
             <p>Y así doy por finalizada mi carta de amor y pensamientos, con todo mi amor, cariño y gratitud eterna, 🥰❤️🤍🐼✨⭐🌟💗🙈</p>
             <div class="signature">Angel ✨</div>
@@ -212,5 +250,28 @@
         <div class="divider">🎀 ✨ ⭐ 🌟 💖 🤍 🐼 🙈 🤍 💖 🌟 ⭐ ✨ 🎀</div>
     </div>
 
+    <!-- Script para la lluvia de caritas, ositos, arcoíris, etc. -->
+    <script>
+        const emojis = ['🐼', '🧸', '✨', '⭐', '🌟', '🥰', '😍', '🌈', '💖', '🤍', '🎀', '💕', '🌹', '🙈'];
+        const container = document.getElementById('falling-container');
+
+        function createFallingEmoji() {
+            const emoji = document.createElement('div');
+            emoji.classList.add('falling-item');
+            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.animationDuration = (Math.random() * 3 + 4) + 's'; // cae entre 4 y 7 segundos
+            emoji.style.fontSize = (Math.random() * 14 + 18) + 'px'; // tamaño entre 18px y 32px
+            emoji.style.opacity = Math.random() * 0.7 + 0.3;
+            container.appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.remove();
+            }, 7500);
+        }
+
+        // Genera caritas cayendo constantemente
+        setInterval(createFallingEmoji, 280);
+    </script>
 </body>
 </html>
