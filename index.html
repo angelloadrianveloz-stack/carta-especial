@@ -14,7 +14,9 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31102f 100%);
+            /* Fondo cálido, alegre y romántico en tonos rosa tinto, carmesí y morado dulce */
+            background: linear-gradient(135deg, #4c0519 0%, #831843 35%, #9f1239 70%, #581c87 100%);
+            background-attachment: fixed;
             color: #f8fafc;
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
@@ -60,32 +62,46 @@
         .container {
             max-width: 800px;
             width: 100%;
-            background: rgba(15, 23, 42, 0.88);
-            backdrop-filter: blur(14px);
-            border: 2px solid rgba(244, 114, 182, 0.4);
+            background: rgba(24, 9, 22, 0.82);
+            backdrop-filter: blur(16px);
+            border: 2px solid rgba(251, 207, 232, 0.4);
             border-radius: 28px;
             padding: 40px 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(236, 72, 153, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(244, 114, 182, 0.4);
             position: relative;
             z-index: 2;
+        }
+
+        /* Lazo de cinta roja en SVG */
+        .ribbon-heart-wrapper {
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+
+        .ribbon-heart-svg {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            filter: drop-shadow(0px 0px 12px rgba(255, 77, 125, 0.8));
         }
 
         .audio-container {
             margin: 15px 0 30px 0;
             padding: 22px;
-            background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(192, 38, 211, 0.15));
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.25), rgba(219, 39, 119, 0.25));
             border-radius: 20px;
             text-align: center;
-            border: 1px solid rgba(244, 114, 182, 0.4);
-            box-shadow: 0 0 20px rgba(244, 114, 182, 0.2);
+            border: 1px solid rgba(251, 207, 232, 0.5);
+            box-shadow: 0 0 25px rgba(244, 114, 182, 0.3);
         }
 
         .audio-container p {
             text-align: center;
             font-size: 1.05rem;
             margin-bottom: 12px;
-            color: #f472b6;
+            color: #fbcfe8;
             font-weight: 600;
+            text-shadow: 0 0 8px rgba(244, 114, 182, 0.5);
         }
 
         audio {
@@ -98,20 +114,20 @@
         .header {
             text-align: center;
             margin-bottom: 35px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             padding-bottom: 25px;
         }
 
         .header h1 {
             font-size: 2.2rem;
-            color: #f472b6;
+            color: #fbcfe8;
             margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(244, 114, 182, 0.5);
+            text-shadow: 0 0 18px rgba(244, 114, 182, 0.7);
         }
 
         .header p {
             font-size: 1.05rem;
-            color: #cbd5e1;
+            color: #f1f5f9;
             font-style: italic;
         }
 
@@ -121,60 +137,61 @@
             font-size: 1.25rem;
             letter-spacing: 5px;
             color: #f472b6;
-            opacity: 0.9;
+            opacity: 0.95;
+            text-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
         }
 
         .section-title {
             font-size: 1.35rem;
-            color: #f38ba8;
+            color: #fbcfe8;
             margin: 25px 0 15px 0;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-left: 4px solid #ec4899;
+            border-left: 4px solid #f472b6;
             padding-left: 12px;
         }
 
         p {
             margin-bottom: 18px;
-            color: #e2e8f0;
+            color: #f8fafc;
             font-size: 1.02rem;
             text-align: justify;
         }
 
         strong {
-            color: #f472b6;
+            color: #fbcfe8;
             font-weight: 600;
         }
 
         blockquote {
-            background: rgba(236, 72, 153, 0.15);
+            background: rgba(244, 114, 182, 0.2);
             border-left: 4px solid #f472b6;
             margin: 25px 0;
             padding: 18px 22px;
             border-radius: 0 12px 12px 0;
             font-style: italic;
-            color: #fbcfe8;
+            color: #ffe4e6;
             text-align: center;
             font-size: 1.08rem;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.15);
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.25);
         }
 
         .footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f1f5f9;
             font-weight: 600;
         }
 
         .signature {
             font-family: 'Great Vibes', cursive;
             font-size: 2.7rem;
-            color: #f472b6;
+            color: #fbcfe8;
             margin-top: 5px;
-            text-shadow: 0 0 12px rgba(244, 114, 182, 0.4);
+            text-shadow: 0 0 15px rgba(244, 114, 182, 0.6);
         }
 
         @media (max-width: 600px) {
@@ -196,7 +213,24 @@
     <div class="falling-container" id="falling-container"></div>
 
     <div class="container">
-        <div class="divider">🎀 ✨ ⭐ 🌟 💖 🤍 🐼 🙈 🤍 💖 🌟 ⭐ ✨ 🎀</div>
+        <!-- LAZO DE CORAZÓN DE CINTA ROJA (ENCABEZADO) -->
+        <div class="ribbon-heart-wrapper">
+            <svg class="ribbon-heart-svg" viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="redRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#ff2a5f" />
+                        <stop offset="50%" stop-color="#ff4d7d" />
+                        <stop offset="100%" stop-color="#e11d48" />
+                    </linearGradient>
+                </defs>
+                <!-- Trazo continuo de la cinta formando el corazón -->
+                <path d="M 20 120 Q 120 140 180 90 C 210 65 200 25 160 25 C 115 25 95 80 250 145 C 405 80 385 25 340 25 C 300 25 290 65 320 90 Q 380 140 480 120" 
+                      fill="none" 
+                      stroke="url(#redRibbon)" 
+                      stroke-width="12" 
+                      stroke-linecap="round" />
+            </svg>
+        </div>
 
         <!-- REPRODUCTOR DE MÚSICA AL INICIO DE LA PÁGINA -->
         <div class="audio-container">
@@ -226,7 +260,16 @@
         <p>Antes de que llegaras a mi vida, yo no sabía lo que era valorarme de verdad, ni entendía la serenidad tan profunda que se siente cuando tienes a alguien que cree en ti de manera incondicional. 💗⭐ <strong>Eres esa luz que me ilumina en la oscuridad.</strong> ✨🐼 Me enseñaste a quererme a mí mismo, a confiar en mis capacidades y a mirar la vida con otros ojos, llenos de esperanza y de ganas de salir adelante. 😍🤍🙈</p>
         <p>Gracias de todo corazón por tu paciencia infinita, por escucharme con atención cuando más lo necesitaba y por impulsarme diariamente a ser una mejor persona, a pesar de mis miedos, mis inseguridades y las sombras de mi pasado. 🥺💖 A tu lado descubrí que no necesito buscar nada más en ninguna otra parte, porque tú llenas cada rincón de mi existencia con tu cariño, tu comprensión y tu ternura. 🥰🐼✨⭐🙈</p>
 
-        <div class="divider">🎀 ✨ 💕 🤍 🐼 🙈 ⭐ 🐼 🤍 💕 ✨ 🎀</div>
+        <!-- SEPARADOR DE CINTA ROJA EN FORMA DE CORAZÓN -->
+        <div class="ribbon-heart-wrapper">
+            <svg class="ribbon-heart-svg" viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="max-width: 220px;">
+                <path d="M 20 120 Q 120 140 180 90 C 210 65 200 25 160 25 C 115 25 95 80 250 145 C 405 80 385 25 340 25 C 300 25 290 65 320 90 Q 380 140 480 120" 
+                      fill="none" 
+                      stroke="url(#redRibbon)" 
+                      stroke-width="10" 
+                      stroke-linecap="round" />
+            </svg>
+        </div>
 
         <div class="section-title">II. Tres Meses Increíbles, Aprendizaje y un Refugio Real 🥰🌹✨💗⭐🙈</div>
         <p>Estos tres meses compartidos a tu lado han sido sencillamente extraordinarios e increíbles. 💖🌟 Eres una persona completamente distinta a lo que el mundo común suele mostrar: eres profundamente amorosa, cariñosa, atenta, confiable y posees una seguridad en ti misma que me inspira todos los días. 🥰✨ Para mí, si tuviera que imaginarte, serías como una rosa en su máxima perfección 🌹🤍; y aunque sé bien que en este mundo nadie es perfecto, son precisamente esas pequeñas imperfecciones humanas las que nos hacen reales, únicos e inigualables. ⭐😊🐼🙈</p>
@@ -247,12 +290,21 @@
             <div class="signature">Angel ✨</div>
         </div>
 
-        <div class="divider">🎀 ✨ ⭐ 🌟 💖 🤍 🐼 🙈 🤍 💖 🌟 ⭐ ✨ 🎀</div>
+        <!-- LAZO DE CORAZÓN DE CINTA ROJA FINAL -->
+        <div class="ribbon-heart-wrapper">
+            <svg class="ribbon-heart-svg" viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="max-width: 250px;">
+                <path d="M 20 120 Q 120 140 180 90 C 210 65 200 25 160 25 C 115 25 95 80 250 145 C 405 80 385 25 340 25 C 300 25 290 65 320 90 Q 380 140 480 120" 
+                      fill="none" 
+                      stroke="url(#redRibbon)" 
+                      stroke-width="12" 
+                      stroke-linecap="round" />
+            </svg>
+        </div>
     </div>
 
     <!-- Script para la lluvia de caritas, ositos, arcoíris, etc. -->
     <script>
-        const emojis = ['🐼', '🧸', '✨', '⭐', '🌟', '🥰', '😍', '🌈', '💖', '🤍', '🎀', '💕', '🌹', '🙈'];
+        const emojis = ['🐼', '🧸', '✨', '⭐', '🌟', '🥰', '😍', '🌈', '💖', '🤍', '🎀', '💕', '🌹', '🙈', '❤️'];
         const container = document.getElementById('falling-container');
 
         function createFallingEmoji() {
@@ -260,8 +312,8 @@
             emoji.classList.add('falling-item');
             emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
             emoji.style.left = Math.random() * 100 + 'vw';
-            emoji.style.animationDuration = (Math.random() * 3 + 4) + 's'; // cae entre 4 y 7 segundos
-            emoji.style.fontSize = (Math.random() * 14 + 18) + 'px'; // tamaño entre 18px y 32px
+            emoji.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            emoji.style.fontSize = (Math.random() * 14 + 18) + 'px';
             emoji.style.opacity = Math.random() * 0.7 + 0.3;
             container.appendChild(emoji);
 
@@ -270,7 +322,6 @@
             }, 7500);
         }
 
-        // Genera caritas cayendo constantemente
         setInterval(createFallingEmoji, 280);
     </script>
 </body>
